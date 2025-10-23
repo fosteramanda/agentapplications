@@ -1,19 +1,19 @@
 #------------------------------------------------------------------
 ### Configurations for testing
 #------------------------------------------------------------------
-@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InlFVXdtWFdMMTA3Q2MtN1FaMldTYmVPYjNzUSIsImtpZCI6InlFVXdtWFdMMTA3Q2MtN1FaMldTYmVPYjNzUSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC83MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDcvIiwiaWF0IjoxNzYxMjU3ODA2LCJuYmYiOjE3NjEyNTc4MDYsImV4cCI6MTc2MTI2MjAxMiwiX2NsYWltX25hbWVzIjp7Imdyb3VwcyI6InNyYzEifSwiX2NsYWltX3NvdXJjZXMiOnsic3JjMSI6eyJlbmRwb2ludCI6Imh0dHBzOi8vZ3JhcGgud2luZG93cy5uZXQvNzJmOTg4YmYtODZmMS00MWFmLTkxYWItMmQ3Y2QwMTFkYjQ3L3VzZXJzLzUzOWU0N2Q2LWM0MzYtNDQ3ZC05NDIwLTk2NTdiNWZmOTY1OS9nZXRNZW1iZXJPYmplY3RzIn19LCJhY3IiOiIxIiwiYWNycyI6WyJwMSIsImM1IiwiYzEwIl0sImFpbyI6IkFhUUFXLzhhQUFBQXVoS0M4Tjd4ZHQvOFVpU0Y1b3daZWxxMWNwRWhPdVNOdHJFeWFkN2tDb3oydVAwN1ArdG5IRDRteFpBcjBydzlHVmhFbnRuNFNhSzAxUE9OS2FjL1RTbFlFMGpnYnVVTkFpR0VVaUpkaFpIdnNTdnlBS1piZU1yUGZDVGVEUjlMbjZnWmk4bGVOMEhxYitnSENjY3FqMUV4UVV1Ym5jSE0yNnZoWHJsNE9lV0FiSTFLQlBBK3JkdE84QWV5NWRmOGFoaVgxUnp6eXJiY3pxMFFFMVlDUkE9PSIsImFtciI6WyJyc2EiLCJtZmEiXSwiYXBwaWQiOiIwNGIwNzc5NS04ZGRiLTQ2MWEtYmJlZS0wMmY5ZTFiZjdiNDYiLCJhcHBpZGFjciI6IjAiLCJkZXZpY2VpZCI6ImY2OWMzMzBjLWY0ZjAtNDA4My1hNTlkLWUxYzZkYjc4NTM4OSIsImZhbWlseV9uYW1lIjoiRm9zdGVyIiwiZ2l2ZW5fbmFtZSI6IkFtYW5kYSIsImlkdHlwIjoidXNlciIsImlwYWRkciI6IjE2Ny4yMjAuMjYuNDMiLCJuYW1lIjoiQW1hbmRhIEZvc3RlciIsIm9pZCI6IjUzOWU0N2Q2LWM0MzYtNDQ3ZC05NDIwLTk2NTdiNWZmOTY1OSIsIm9ucHJlbV9zaWQiOiJTLTEtNS0yMS0yMTI3NTIxMTg0LTE2MDQwMTI5MjAtMTg4NzkyNzUyNy03ODQ5Mzc0MyIsInB1aWQiOiIxMDAzMjAwM0IxMUFFOEY3IiwicHdkX3VybCI6Imh0dHBzOi8vcG9ydGFsLm1pY3Jvc29mdG9ubGluZS5jb20vQ2hhbmdlUGFzc3dvcmQuYXNweCIsInJoIjoiMS5BUUVBdjRqNWN2R0dyMEdScXkxODBCSGJSMFpJZjNrQXV0ZFB1a1Bhd2ZqMk1CTWFBQWthQUEuIiwic2NwIjoidXNlcl9pbXBlcnNvbmF0aW9uIiwic2lkIjoiMDA5YmQyYjktYjA4ZS04ZmU5LTJkNWMtODU0NjJkNWVmZTU3Iiwic3ViIjoidWVpbjlqQ2NpNlpCbExkcU5UUUpkMzFMdWZFbkxjcGxjWXBsbTdPdUFGayIsInRpZCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsInVuaXF1ZV9uYW1lIjoiZm9zdGVyYW1hbmRhQG1pY3Jvc29mdC5jb20iLCJ1cG4iOiJmb3N0ZXJhbWFuZGFAbWljcm9zb2Z0LmNvbSIsInV0aSI6IlNQT0JaX1JUT0VPYjFpY09RVGl0QUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbImI3OWZiZjRkLTNlZjktNDY4OS04MTQzLTc2YjE5NGU4NTUwOSJdLCJ4bXNfYWN0X2ZjdCI6IjMgNSIsInhtc19mdGQiOiJoSHBVRGR1aElObHl4SzM1NVZnaXFib1I1eTh6RnMydVZnamJMMDVQMDdvQmRYTnViM0owYUMxa2MyMXoiLCJ4bXNfaWRyZWwiOiIzMiAxIiwieG1zX3N1Yl9mY3QiOiIzIDQiLCJ4bXNfdGNkdCI6MTI4OTI0MTU0N30.Y_SS6VAYmNaINyK4RT2DFkxtYwZZmybb0NeRm2kkUCFwgpYIJGZ2MQlQDWMGNKgzFIgXhg6s6UDqLRq0SJNHEjDPlkedEbwTT_UKvKTdkrVMffaPfHl_y_LB-AT_dlO_PuRhbPCMkHgU2k9v4q4hpDitro2HdidGyGvOfD9hjvUXYXTNvCCeSecNnbMsaXk6UA-mwNH7NttJGDBr8mH8PXJwOi4Bubp3_Xz5C47PvIwNMxqEDFXZuMraQXVhY2O-WiSMsQVOkL4a8zylYnpXbbubdBQxJgOXdso1yEgIHe4yND_UKz8nQbKGh7lEKVejuO9L7E3hbJADp3vVz229Pg
-@resource_group = rg-amanda
-@account_name = appaccount
-@project_name = appproject
+@token = <add access token>
+@resource_group = <your resource group name>
+@account_name = <Azure AI Foundry resource name>
+@project_name = <Foundry project name>
 
-@subscription_id = 921496dc-987f-410f-bd57-426eb2611356
+@subscription_id = <subscription name>
 
 #Common variables - Dont change these variables for now
 @location_name = eastus2euap
 @api_version= 2025-10-01-preview
 
-# Variables for the resources you will create
-@application_name = myapplication4
+# Variables for the resources you will create, you can name theseanything
+@application_name = myapplication
 @deployment_name = mydeployment
 
 
@@ -96,4 +96,5 @@ Content-Type: application/json
                 "version": "1.0.0"
             }
         ]
+
   }
