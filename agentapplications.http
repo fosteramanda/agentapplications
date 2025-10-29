@@ -20,22 +20,22 @@
 #------------------------------------------------------------------
 ### Create Agent Application
 #------------------------------------------------------------------
-PUT https://eastus2euap.management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}?api-version={{api_version}}
+PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
   "properties":{
-    "displayName": "nice",
+    "displayName": "niceapp",
     "baseUrl": "www.doubleohseven.com",
-    "agents": [{"agentName": "Smith. Agent Smith."}]
+    "agents": [{"agentName": "Smith. Agent Smith Amanda."}]
   }
 }
 
 #------------------------------------------------------------------
 ### List Agent Applications
 #------------------------------------------------------------------
-GET https://eastus2euap.management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications?api-version={{api_version}}
+GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -43,14 +43,15 @@ Content-Type: application/json
 #------------------------------------------------------------------
 ### Get Agent Applications
 #------------------------------------------------------------------
-GET https://eastus2euap.management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}?api-version={{api_version}}
+GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
+
 
 #------------------------------------------------------------------
 ### Create Deployment for a prompt agent or workflow
 #------------------------------------------------------------------
-PUT https://eastus2euap.management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name}}?api-version={{api_version}}
+PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name}}?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -78,7 +79,7 @@ Content-Type: application/json
 #------------------------------------------------------------------
 ### Create Deployment for a hosted agent
 #------------------------------------------------------------------
-PUT https://eastus2euap.management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name2}}?api-version={{api_version}}
+PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name2}}?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -106,14 +107,13 @@ Content-Type: application/json
 #------------------------------------------------------------------
 ### List Deployments
 #------------------------------------------------------------------
-GET https://eastus2euap.management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments?api-version={{api_version}}
+GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 #------------------------------------------------------------------
 ### Get Deployment
 #------------------------------------------------------------------
-GET https://eastus2euap.management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name}}?api-version={{api_version}}
+GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name}}?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
-
