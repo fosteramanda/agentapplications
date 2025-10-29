@@ -47,7 +47,6 @@ GET https://eastus2euap.management.azure.com/subscriptions/{{subscription_id}}/r
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
-
 #------------------------------------------------------------------
 ### Create Deployment for a prompt agent or workflow
 #------------------------------------------------------------------
@@ -56,31 +55,36 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "displayName": "Test Managed Deployment",
-  "deploymentType": "Managed",
-  "protocols": [
+  "properties":{
+     "displayName": "Test Managed Deployment",
+    "deploymentType": "Managed",
+    "protocols": [
         {
           "protocol": "responses",
           "version": "1.0"
         }
-  ],
-  "agents": [
+    ],
+    "agents": [
         {
-            "agentName": "test-agent-1",
+            "agentName": "Smith. Agent Smith.",
             "version": "1.0.0"
         }
     ]
+
+  }
+
 }
 
 #------------------------------------------------------------------
 ### Create Deployment for a hosted agent
 #------------------------------------------------------------------
-PUT https://eastus2euap.management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name}}?api-version={{api_version}}
+PUT https://eastus2euap.management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name2}}?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "displayName": "Test Hosted Deployment",
+  "properties": {
+    "displayName": "Test Hosted Deployment",
         "deploymentType": "Hosted",
         "minReplicas": 1,
         "maxReplicas": 3,
@@ -92,9 +96,24 @@ Content-Type: application/json
         ],
         "agents": [
             {
-                "agentName": "test-agent-1",
+                "agentName": "Smith. Agent Smith.",
                 "version": "1.0.0"
             }
         ]
-
   }
+}
+
+#------------------------------------------------------------------
+### List Deployments
+#------------------------------------------------------------------
+GET https://eastus2euap.management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+#------------------------------------------------------------------
+### Get Deployment
+#------------------------------------------------------------------
+GET https://eastus2euap.management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name}}?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
