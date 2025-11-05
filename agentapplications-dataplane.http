@@ -1,1 +1,14 @@
 
+@token = <your access token>
+@app_endpoint = https://<foundry-resource-name>.services.ai.azure.com/api/projects/<project-name>/applications/<app-name>
+
+#------------------------------------------------------------------
+### Invoke agent
+#------------------------------------------------------------------
+POST {{app_endpoint}}/protocols/openai/responses?api-version=2025-11-15-preview
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "input": [ {"role": "user", "content": "Tell me a one line story"} ]
+}
