@@ -130,7 +130,7 @@ Content-Type: application/json
         "agents": [
             {
                 "agentName": "ContainerAgent",
-                //"version": "2"
+                "agentVersion": "1"
             }
         ]
   }
@@ -139,7 +139,7 @@ Content-Type: application/json
 #------------------------------------------------------------------
 ### Create Project Deployment for a hosted agent
 #------------------------------------------------------------------
-PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/agentdeployments/{{deployment_name2}}?api-version={{api_version}}
+PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/default/agentDeployments/{{deployment_name2}}?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -158,7 +158,7 @@ Content-Type: application/json
         "agents": [
             {
                 "agentName": "ContainerAgent",
-                "version": "1"
+                "agentVersion": "1"
             }
         ]
   }
@@ -177,4 +177,5 @@ Content-Type: application/json
 GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name}}?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
+
 
