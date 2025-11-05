@@ -16,7 +16,6 @@
 @application_name = myapplication
 @deployment_name = mydeployment
 
-
 #------------------------------------------------------------------
 ### Create Agent Application
 #------------------------------------------------------------------
@@ -28,7 +27,26 @@ Content-Type: application/json
   "properties":{
     "displayName": "niceapp",
     "baseUrl": "www.doubleohseven.com",
-    "agents": [{"agentName": "Smith. Agent Smith Amanda."}]
+    "agents": [{"agentName": "Publishing Agent"}]
+  }
+}
+
+#------------------------------------------------------------------
+### Update Agent Application
+#------------------------------------------------------------------
+PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "properties": {
+    "displayName": "Agenty McAgentface",
+    "baseUrl": "www.agenty-mcagentface.com",
+    "agents": [
+      {
+        "agentName": "Publishing Agent"
+      }
+    ]
   }
 }
 
@@ -57,6 +75,7 @@ Content-Type: application/json
 
 {
   "properties":{
+    "description": "This is a managed deployment",
      "displayName": "Test Managed Deployment",
     "deploymentType": "Managed",
     "protocols": [
@@ -67,8 +86,8 @@ Content-Type: application/json
     ],
     "agents": [
         {
-            "agentName": "Smith. Agent Smith.",
-            "version": "1"
+            "agentName": "Publishing Agent",
+            "agentVersion": "1"
         }
     ]
 
@@ -77,7 +96,7 @@ Content-Type: application/json
 }
 
 #------------------------------------------------------------------
-### Create Deployment for a hosted agent
+### Create App Deployment for a hosted agent
 #------------------------------------------------------------------
 PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name2}}?api-version={{api_version}}
 Authorization: Bearer {{token}}
@@ -88,7 +107,7 @@ Content-Type: application/json
     "displayName": "Test Hosted Deployment",
         "deploymentType": "Hosted",
         "minReplicas": 1,
-        "maxReplicas": 3,
+        "maxReplicas": 1,
         "protocols": [
             {
                 "protocol": "responses",
@@ -97,7 +116,35 @@ Content-Type: application/json
         ],
         "agents": [
             {
-                "agentName": "Smith. Agent Smith.",
+                "agentName": "ContainerAgent",
+                //"version": "2"
+            }
+        ]
+  }
+}
+
+#------------------------------------------------------------------
+### Create Project Deployment for a hosted agent
+#------------------------------------------------------------------
+PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/agentdeployments/{{deployment_name2}}?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "properties": {
+    "displayName": "Test Hosted Deployment",
+        "deploymentType": "Hosted",
+        "minReplicas": 1,
+        "maxReplicas": 1,
+        "protocols": [
+            {
+                "protocol": "responses",
+                "version": "1.0"
+            }
+        ],
+        "agents": [
+            {
+                "agentName": "ContainerAgent",
                 "version": "1"
             }
         ]
@@ -117,4 +164,3 @@ Content-Type: application/json
 GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name}}?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
-
