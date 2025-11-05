@@ -5,10 +5,17 @@
 - Use an allowlisted subscription
 - Use API Version 10-01-2025-preview
 
-## Get Access Token
-The simplest way to get a bearer token is to use Azure CLI. From command prompt run: 
-- az login
-- az account get-access-token
+## Control Plane
+- Use API Version 10-01-2025-preview
+- The simplest way to get a bearer token is to use Azure CLI. From command prompt run: 
+  - az login
+  - az account get-access-token
+
+## Date Plane
+- Use API version 2025-11-15-preview
+- To get access token from the command prompt run:
+  - az login
+  - az account get-access-token --resource 'https://ai.azure.com' --query accessToken -o tsv
 
 ## REST API Testing in VSCode
 - Clone this repo and open in VS Code
