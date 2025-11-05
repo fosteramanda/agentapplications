@@ -3,15 +3,20 @@
 ## Important Testing Information
 - Test in canary (eastus2euap) and westus2
 - Use an allowlisted subscription
-- Use API Version 10-01-2025-preview
 
-## Control Plane
+## Instructions
+1. Create an Azure AI Foundry resource and project
+2. Create an agent v2 in that project
+3. Create an agent application and deployment that reference the agent version you created. See control plane section for details.
+4. Invoke your agent application. See data plane section for details.
+
+### Control Plane - Create an agent application and deployment
 - Use API Version 10-01-2025-preview
 - The simplest way to get a bearer token is to use Azure CLI. From command prompt run: 
   - az login
   - az account get-access-token
 
-## Date Plane
+### Date Plane - Invoke your agent application
 - Use API version 2025-11-15-preview
 - Test using [sdk](agentapplication-responses.py) or [rest apis](agentapplications-dataplane.http)
 - To get access token from the command prompt run:
