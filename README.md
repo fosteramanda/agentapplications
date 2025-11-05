@@ -13,7 +13,7 @@
 
 ## Date Plane
 - Use API version 2025-11-15-preview
-- Test using [sdk](agentapplications-responses.py) or [rest apis](agentapplications-dataplane.http)
+- Test using [sdk](agentapplication-responses.py) or [rest apis](agentapplications-dataplane.http)
 - To get access token from the command prompt run:
   - az login
   - az account get-access-token --resource 'https://ai.azure.com' --query accessToken -o tsv
