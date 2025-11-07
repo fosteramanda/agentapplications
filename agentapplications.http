@@ -27,7 +27,6 @@ Content-Type: application/json
 {
   "properties":{
     "displayName": "niceapp",
-    "baseUrl": "www.doubleohseven.com",
     "agents": [{"agentName": "Publishing Agent"}],
     // This eventually will be creates by default. But must add for now.
     "trafficRoutingPolicy": {
@@ -54,7 +53,6 @@ Content-Type: application/json
 {
   "properties": {
     "displayName": "Agenty McAgentface",
-    "baseUrl": "www.agenty-mcagentface.com",
     "agents": [
       {
         "agentName": "Publishing Agent"
@@ -88,8 +86,7 @@ Content-Type: application/json
 
 {
   "properties":{
-    "description": "This is a managed deployment",
-     "displayName": "Test Managed Deployment",
+    "displayName": "Test Managed Deployment",
     "deploymentType": "Managed",
     "protocols": [
         {
@@ -103,9 +100,7 @@ Content-Type: application/json
             "agentVersion": "1"
         }
     ]
-
   }
-
 }
 
 #------------------------------------------------------------------
@@ -177,5 +172,6 @@ Content-Type: application/json
 GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name}}?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
+
 
 
