@@ -94,14 +94,14 @@ Content-Type: application/json
 #------------------------------------------------------------------
 ### Start an Agent Application Deployment
 #------------------------------------------------------------------
-POST https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentDeployments/{{deployment_name2}}/start?api-version={{api_version}}
+POST https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentDeployments/{{deployment_name}}/start?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 #------------------------------------------------------------------
 ### Stop an Agent Application Deployment
 #------------------------------------------------------------------
-POST https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentDeployments/{{deployment_name2}}/stop?api-version={{api_version}}
+POST https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentDeployments/{{deployment_name}}/stop?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -118,6 +118,7 @@ Content-Type: application/json
 GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name}}?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
+
 
 
 
