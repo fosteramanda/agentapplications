@@ -28,18 +28,6 @@ Content-Type: application/json
   "properties":{
     "displayName": "niceapp",
     "agents": [{"agentName": "Publishing Agent"}],
-    // This eventually will be creates by default. But must add for now.
-    "trafficRoutingPolicy": {
-    "protocol": "fixedRatio",
-    "rules": [
-      {
-        "ruleId": "default",
-        "description": "Default rule routing all traffic to the first deployment",
-        "deploymentId": "",
-        "trafficPercentage": 100
-      }
-    ]
-  } 
   }
 }
 
@@ -104,60 +92,18 @@ Content-Type: application/json
 }
 
 #------------------------------------------------------------------
-### Create App Deployment for a hosted agent
+### Start an Agent Application Deployment
 #------------------------------------------------------------------
-PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name2}}?api-version={{api_version}}
+POST https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentDeployments/{{deployment_name2}}/start?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
-{
-  "properties": {
-    "displayName": "Test Hosted Deployment",
-        "deploymentType": "Hosted",
-        "minReplicas": 1,
-        "maxReplicas": 1,
-        "protocols": [
-            {
-                "protocol": "responses",
-                "version": "1.0"
-            }
-        ],
-        "agents": [
-            {
-                "agentName": "ContainerAgent",
-                "agentVersion": "1"
-            }
-        ]
-  }
-}
-
 #------------------------------------------------------------------
-### Create Project Deployment for a hosted agent
+### Stop an Agent Application Deployment
 #------------------------------------------------------------------
-PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/default/agentDeployments/{{deployment_name2}}?api-version={{api_version}}
+POST https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentDeployments/{{deployment_name2}}/stop?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
-
-{
-  "properties": {
-    "displayName": "Test Hosted Deployment",
-        "deploymentType": "Hosted",
-        "minReplicas": 1,
-        "maxReplicas": 1,
-        "protocols": [
-            {
-                "protocol": "responses",
-                "version": "1.0"
-            }
-        ],
-        "agents": [
-            {
-                "agentName": "ContainerAgent",
-                "agentVersion": "1"
-            }
-        ]
-  }
-}
 
 #------------------------------------------------------------------
 ### List Deployments
@@ -172,6 +118,7 @@ Content-Type: application/json
 GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name}}?api-version={{api_version}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
+
 
 
 
