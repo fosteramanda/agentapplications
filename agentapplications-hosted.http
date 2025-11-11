@@ -1,1 +1,174 @@
 
+#------------------------------------------------------------------
+### Configurations for testing Agent Applications and Deployments with Hosted Agents
+#------------------------------------------------------------------
+@token = <add access token>
+@resource_group = <your resource group name>
+@account_name = <Azure AI Foundry resource name>
+@project_name = <Foundry project name>
+
+@subscription_id = <subscription name>
+
+#Common variables - Dont change these variables for now
+@location_name = westus2
+@api_version= 2025-10-01-preview
+
+# Variables for the resources you will create, you can name theseanything
+@application_name = myapplication
+@deployment_name = mydeployment
+
+#------------------------------------------------------------------
+### Create Agent Application
+### Prerequisites: Need an Azure AI Foundry resource and project and an agent v2
+#------------------------------------------------------------------
+PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "properties":{
+    "displayName": "niceapp",
+    "agents": [{"agentName": "Publishing Agent"}]
+  }
+}
+
+#------------------------------------------------------------------
+### Update Agent Application
+#------------------------------------------------------------------
+PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "properties": {
+    "displayName": "Agenty McAgentface",
+    "agents": [
+      {
+        "agentName": "Publishing Agent"
+      }
+    ]
+  }
+}
+
+#------------------------------------------------------------------
+### List Agent Applications
+#------------------------------------------------------------------
+GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+
+#------------------------------------------------------------------
+### Get Agent Applications
+#------------------------------------------------------------------
+GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+#------------------------------------------------------------------
+### Create App Deployment for a hosted agent
+#------------------------------------------------------------------
+PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name2}}?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "properties": {
+    "displayName": "Test Hosted Deployment",
+        "deploymentType": "Hosted",
+        "minReplicas": 1,
+        "maxReplicas": 1,
+        "protocols": [
+            {
+                "protocol": "responses",
+                "version": "1.0"
+            }
+        ],
+        "agents": [
+            {
+                "agentName": "ContainerAgent",
+                "agentVersion": "1"
+            }
+        ]
+  }
+}
+
+#------------------------------------------------------------------
+### Start a Hosted Agent Application Deployment
+#------------------------------------------------------------------
+POST https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentDeployments/{{deployment_name2}}/start?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+#------------------------------------------------------------------
+### Stop a Hosted Agent Application Deployment
+#------------------------------------------------------------------
+POST https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentDeployments/{{deployment_name2}}/stop?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+#------------------------------------------------------------------
+### List Application Deployments
+#------------------------------------------------------------------
+GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+#------------------------------------------------------------------
+### Get Application Deployment
+#------------------------------------------------------------------
+GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/{{application_name}}/agentdeployments/{{deployment_name2}}?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+#------------------------------------------------------------------
+### Create Project Deployment for a hosted agent
+#------------------------------------------------------------------
+PUT https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/default/agentDeployments/{{deployment_name2}}?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "properties": {
+    "displayName": "Test Hosted Deployment",
+        "deploymentType": "Hosted",
+        "minReplicas": 1,
+        "maxReplicas": 1,
+        "protocols": [
+            {
+                "protocol": "responses",
+                "version": "1.0"
+            }
+        ],
+        "agents": [
+            {
+                "agentName": "ContainerAgent",
+                "agentVersion": "1"
+            }
+        ]
+  }
+}
+
+#------------------------------------------------------------------
+### Start a Hosted Agent Project Deployment
+#------------------------------------------------------------------
+POST https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/default/agentDeployments/{{deployment_name2}}/start?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+#------------------------------------------------------------------
+### Stop a Hosted Agent Project Deployment
+#------------------------------------------------------------------
+POST https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/default/agentDeployments/{{deployment_name2}}/stop?api-version={{api_version}}
+Authorization: Bearer {{token}}
+
+#------------------------------------------------------------------
+### Get a Project Deployment for a hosted agent
+#------------------------------------------------------------------
+GET https://management.azure.com/subscriptions/{{subscription_id}}/resourceGroups/{{resource_group}}/providers/Microsoft.CognitiveServices/accounts/{{account_name}}/projects/{{project_name}}/applications/default/agentDeployments/{{deployment_name2}}?api-version={{api_version}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+
+
+
